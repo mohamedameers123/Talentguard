@@ -3,4 +3,4 @@ def main():
     data=load_data()
     data.head()
 if __name__=="__main__":
-    mainf
+    main
