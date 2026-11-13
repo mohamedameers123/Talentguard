@@ -1,32 +1,32 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from config.pa_th import charts_path
 
-from matplotlib.pyplot import figure
 
 from components.data_load import load_data
-paths="./artifacts/charts"
+
 
 def save_bar(series,title,filename,xlabel=" ",ylabel="count"):
-    figure(figsize=(10,10))
+    plt.figure(figsize=(10,10))
     series.plot(kind="bar",rot=0)
     plt.title(title)
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
-    plt.savefig(os.path.join(paths,filename))
+    plt.savefig(os.path.join(charts_path,filename))
     plt.close()
 
 def save_hist(series,title,filename,bin=20):
     plt.hist(series,bins=bin)
     plt.xlabel("Age")
     plt.title(title)
-    plt.savefig(os.path.join(paths,filename))
+    plt.savefig(os.path.join(charts_path,filename))
     plt.close()
 
 def save_stacked_bar(crossbar,title,filename):
     crossbar.plot(kind="bar",stacked=True,rot=0)
     plt.title(title)
-    plt.savefig(os.path.join(paths,filename))
+    plt.savefig(os.path.join(charts_path,filename))
     plt.close()
 
 
