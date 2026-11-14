@@ -2,10 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-from config.pa_th import charts_path
+from src.config.pa_th import charts_path
 
 
-from components.data_load import load_data
+from src.components.data_load import load_data
 
 
 def save_bar(series,title,filename,xlabel=" ",ylabel="count"):

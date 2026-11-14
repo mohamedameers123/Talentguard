@@ -1,4 +1,4 @@
-from components.data_load import load_data
+from src.components.data_load import load_data
 import pandas as pd
 def feature_target(data:pd.DataFrame):
     data=load_data()

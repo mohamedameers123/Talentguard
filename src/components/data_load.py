@@ -1,5 +1,5 @@
 import pandas as pd
-from config.pa_th import data_path
+from src.config.pa_th import data_path
 
 def load_data():
     data=pd.read_csv(data_path/"HR-Employee-Attrition.csv")

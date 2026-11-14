@@ -1,5 +1,5 @@
 import pandas as pd
-from components.data_load import load_data
+from src.components.data_load import load_data
 
 
 
