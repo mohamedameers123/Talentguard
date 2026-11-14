@@ -2,9 +2,10 @@ import pandas as pd
 from src.components.data_load import load_data
 def transform_data(data:pd.DataFrame):
     #method 1
-    cat_data=data.select_dtypes(include="str").columns.tolist()
+    num_data=data.select_dtypes(include="number").columns.tolist()
     #method 2
-    num_data=[i for i in data.columns if data[i].dtype!="str"]
+    cat_data=[i for i in data.columns if data[i].dtype=="str"
+              and i !="Attrition"]
     target_data=data["Attrition"]
     return cat_data,num_data,target_data
 

@@ -1,7 +1,6 @@
 from src.components.data_load import load_data
 import pandas as pd
-def feature_target(data:pd.DataFrame):
-    data=load_data()
+def feature_targets(data:pd.DataFrame):
     data=data.drop("EmployeeNumber",axis=1)
     X=data.drop("Attrition",axis=1)
     y=data[["Attrition"]]
