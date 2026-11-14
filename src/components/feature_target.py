@@ -1,6 +1,6 @@
-from components.data_load import load_data
-def main():
+from data_load import load_data
+def feature_target():
     data=load_data()
-    data.head()
+    print(data.head())
 if __name__=="__main__":
-    main
+    feature_target()
