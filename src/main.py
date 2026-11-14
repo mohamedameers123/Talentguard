@@ -5,11 +5,8 @@ from components.visualizations import save_charts
 from components.feature_target import feature_target
 def main():
     data=load_data()
-    dataset_check(data)
-    eda_operations(data)
-    save_charts(data)
-    feature_target()
-
-
+    #dataset_check(data)
+    #save_charts(data)
+    X,y=feature_target(data)
 if __name__=='__main__':
     main()
