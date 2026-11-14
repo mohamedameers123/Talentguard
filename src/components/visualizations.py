@@ -2,10 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-#from config.pa_th import charts_path
+from config.pa_th import charts_path
 
-#from config.pa_th import charts_path
-charts_path="./artifacts/reports"
 
 from components.data_load import load_data
 

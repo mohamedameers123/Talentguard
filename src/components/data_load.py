@@ -1,8 +1,8 @@
 import pandas as pd
-#from config.pa_th import data_path
-data_path="./DATA/RAW"
+from config.pa_th import data_path
+
 def load_data():
-    data=pd.read_csv("./DATA/RAW/HR-Employee-Attrition.csv")
+    data=pd.read_csv(data_path/"HR-Employee-Attrition.csv")
 
     return data
 

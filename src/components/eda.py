@@ -1,14 +1,14 @@
 import pandas as pd
 from components.data_load import load_data
 import os
-#from config.pa_th import report_path
+from config.pa_th import report_path
 
-path="./artifacts/reports"
+
 
 def eda_operations(data:pd.DataFrame):
-    print("\n"+"="*102)
+    print("\n"+"="*95)
     print("Exploratory Data Analysis".center(102))
-    print("="*102)
+    print("="*95)
     print("Shape of the data :",data.shape,"\n"+"-"*len("Shape of the data"))
     print("_" * 70)
     print("Data description\n"+"-"*len("Data description"))
@@ -24,7 +24,7 @@ def eda_operations(data:pd.DataFrame):
     print(pd.crosstab(data["OverTime"],data["Attrition"]))
     print("_" * 70)
 
-    with open(os.path.join(path,"data_summary.txt"),"w") as file:
+    with open(os.path.join(report_path,"data_summary.txt"),"w") as file:
         file.write("=" * 102)
         file.write("\nExploratory Data Analysis".center(102))
         file.write("\n"+"=" * 102)

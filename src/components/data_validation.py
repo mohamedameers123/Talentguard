@@ -6,9 +6,9 @@ from components.data_load import load_data
 
 
 def dataset_check(data:pd.DataFrame):
-    print("*"*30)
-    print("Dataset Overview".center(30))
-    print("*" * 30,"\n")
+    print("*"*95)
+    print("Dataset Overview".center(90))
+    print("*" * 95,"\n")
 
     print("Shape of the data :",data.shape,"\n","_"*30)
     print("Names of columns".center(30),'\n',"_"*30)
