@@ -6,6 +6,7 @@ def transform_data(data:pd.DataFrame):
     #method 2
     cat_data=[i for i in data.columns if data[i].dtype=="str"
               and i !="Attrition"]
+    num_data.remove("EmployeeNumber")
     target_data=data["Attrition"]
     return cat_data,num_data,target_data
 
