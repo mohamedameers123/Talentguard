@@ -40,5 +40,7 @@ def encode_y(y_train,y_test):
     }
     y_train=y_train.replace(mapping)
     y_test=y_test.replace(mapping)
+    y_train=y_train.astype("int")
+    y_test=y_test.astype("int")
     return y_train,y_test
 
