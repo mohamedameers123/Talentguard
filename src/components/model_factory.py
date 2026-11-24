@@ -8,8 +8,8 @@ from sklearn.naive_bayes import GaussianNB
 from xgboost import XGBClassifier
 
 def load_models():
-    return {"Logistic_Regression":LogisticRegression(random_state=42),
-            "knn":KNeighborsClassifier(n_neighbors=5),
+    return {"Logistic_Regression":LogisticRegression(random_state=42,),
+            "knn":KNeighborsClassifier(n_neighbors=5,),
             "Decision Tree":DecisionTreeClassifier(random_state=42),
             "Random Forest":RandomForestClassifier(random_state=42),
             "Ada boost":AdaBoostClassifier(),

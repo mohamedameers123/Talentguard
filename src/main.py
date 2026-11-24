@@ -8,6 +8,7 @@ from src.components.tts import train_test
 from src.components.preprocessing import create_preprocess,call_preprocess,encode_y
 from src.components.model_factory import load_models
 from src.components.model_training import mod_call
+from src.components.model_tuning import tuning
 
 
 def main():
@@ -21,7 +22,15 @@ def main():
     X_train,X_test,preprocess=call_preprocess(X_train,X_test,num_data,cat_data)
     y_train,y_test=encode_y(y_train,y_test)
     print("Testing the error")
-    mod_call(X_train,X_test,y_train,y_test)
+    #mod_call(X_train,X_test,y_train,y_test)
+    best_model_name, best_model, best_param,best_score, tune=tuning(X_train,y_train)
+    print("best_model_name:\n",best_model_name)
+    print("best_model\n",best_model)
+    print("best_parameter\n",best_param)
+    print("best_score\n",best_score)
+    print("Tuning result\n")
+    print(tune)
+
 
 
 
