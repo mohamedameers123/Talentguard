@@ -1,7 +1,7 @@
 from src.components.model_factory import load_models
 from sklearn.model_selection import GridSearchCV
 import joblib
-
+from src.config.pa_th import model_tun_path
 
 models={
     "Logistic_Regression":load_models()["Logistic_Regression"],
@@ -62,5 +62,6 @@ def tuning(X_train,y_train):
             best_param=current_param
             best_model=grid_search.best_estimator_
             best_model_name=current_model_name=model_name
+    joblib.dump(best_model,model_tun_path/f"{best_model_name}.pkl")
     return (best_model_name,best_model,best_param,
             best_score,tune,)

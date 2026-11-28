@@ -4,7 +4,7 @@ from src.components.model_factory import load_models
 from sklearn.metrics import (accuracy_score,precision_score,
                              recall_score,f1_score)
 import joblib
-from src.config.pa_th import report_path,model_path
+from src.config.pa_th import model_train_path
 
 def evolution_metrics(model,X_test,y_test):
     pred=model.predict(X_test)
@@ -25,7 +25,7 @@ def model_training(X_train,X_test,y_train,y_test):
         metrics=evolution_metrics(model,X_test,y_test)
         lb.append({"model":model,
                    "accuracy":round(metrics["accuracy"],4),
-                   "precision":round(metrics["accuracy"],4),
+                   "precision":round(metrics["precision"],4),
                    "recall":round(metrics["recall"],4),
                    "f1":round(metrics["f1"],4)
                    })
@@ -41,13 +41,18 @@ def model_training(X_train,X_test,y_train,y_test):
     return lb,best_model,best_model_name
 
 def save_models(model,model_name):
-    joblib.dump(model,model_path/f"{model_name}.pkl")
+    joblib.dump(model,model_train_path/f"{model_name}.pkl")
 
 def mod_call(X_train,X_test,y_train,y_test):
     lb,best_model,best_model_name=model_training(X_train,
                                                  X_test,
                                                  y_train,y_test)
     print(lb)
+    print("This is model training testing ")
+    print("lalalallalalalalalallllaaaa".center(70))
+    print("best_model",best_model)
+    print("best_model_name",best_model_name)
+    print("lalalalalalallala".center(70))
     save_models(best_model,best_model_name)
     print(best_model_name,best_model)
 

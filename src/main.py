@@ -9,12 +9,13 @@ from src.components.preprocessing import create_preprocess,call_preprocess,encod
 from src.components.model_factory import load_models
 from src.components.model_training import mod_call
 from src.components.model_tuning import tuning
+from src.components.model_evaluation import mod_evaluation
 
 
 def main():
     data=load_data()
-    #dataset_check(data)
-    #save_charts(data)
+    dataset_check(data)
+    save_charts(data)
     X,y=feature_targets(data)
     cat_data,num_data,target_data=transform_data(data)
     X_train,X_test,y_train,y_test=train_test(X,y)
@@ -22,17 +23,10 @@ def main():
     X_train,X_test,preprocess=call_preprocess(X_train,X_test,num_data,cat_data)
     y_train,y_test=encode_y(y_train,y_test)
     print("Testing the error")
-    #mod_call(X_train,X_test,y_train,y_test)
-    best_model_name, best_model, best_param,best_score, tune=tuning(X_train,y_train)
-    print("best_model_name:\n",best_model_name)
-    print("best_model\n",best_model)
-    print("best_parameter\n",best_param)
-    print("best_score\n",best_score)
-    print("Tuning result\n")
-    print(tune)
-
-
-
+    mod_call(X_train,X_test,y_train,y_test)
+    best_model_name, best_model, best_param,best_score,tune=tuning(X_train,y_train)
+    result=mod_evaluation(best_model,best_model_name,
+                          X_test,y_test)
 
 
 
