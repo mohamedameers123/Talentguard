@@ -10,6 +10,7 @@ from src.components.model_factory import load_models
 from src.components.model_training import mod_call
 from src.components.model_tuning import tuning
 from src.components.model_evaluation import mod_evaluation
+from src.components.copied_experiment_tracking import log_experiment
 
 
 def main():
@@ -27,7 +28,7 @@ def main():
     best_model_name, best_model, best_param,best_score,tune=tuning(X_train,y_train)
     result=mod_evaluation(best_model,best_model_name,
                           X_test,y_test)
-
+    log_experiment(best_model,best_model_name,result)
 
 
 
